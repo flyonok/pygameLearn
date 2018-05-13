@@ -24,7 +24,19 @@ clock = pygame.time.Clock()
  
 carImg = pygame.image.load('racecar.png')
  
- 
+def button(msg,x,y,w,h,ic,ac):
+    mouse = pygame.mouse.get_pos()
+
+    if x+w > mouse[0] > x and y+h > mouse[1] > y:
+        pygame.draw.rect(gameDisplay, ac,(x,y,w,h))
+    else:
+        pygame.draw.rect(gameDisplay, ic,(x,y,w,h))
+
+    smallText = pygame.font.Font("freesansbold.ttf",20)
+    textSurf, textRect = text_objects(msg, smallText)
+    textRect.center = ( (x+(w/2)), (y+(h/2)) )
+    gameDisplay.blit(textSurf, textRect)
+
 def things_dodged(count):
     font = pygame.font.SysFont(None, 25)
     text = font.render("Dodged: "+str(count), True, black)
@@ -79,6 +91,7 @@ def game_intro():
 
         #print(mouse)
 
+        '''
         if 150+100 > mouse[0] > 150 and 450+50 > mouse[1] > 450:
             pygame.draw.rect(gameDisplay, bright_green, (150,450,100,50))
         else:
@@ -87,8 +100,10 @@ def game_intro():
         textSurf, textRect = text_objects("GO!", smallText)
         textRect.center = ( (150 + (100/2)), (450 + (50/2)))
         gameDisplay.blit(textSurf, textRect)
+        '''
+        button('GO!', 150, 450, 100, 50, bright_green, green)
 
-        pygame.draw.rect(gameDisplay, red,(550,450,100,50))
+        pygame.draw.rect(gameDisplay, red, (550, 450, 100, 50))
         pygame.display.update()
         clock.tick(15)
         

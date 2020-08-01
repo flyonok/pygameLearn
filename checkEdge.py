@@ -1,4 +1,7 @@
 import pygame
+'''
+检测边缘
+'''
 
 pygame.init()
 

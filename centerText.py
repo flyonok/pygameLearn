@@ -1,5 +1,8 @@
 import pygame
 import time
+'''
+在游戏屏幕中间显示一行文字
+'''
 
 pygame.init()
 

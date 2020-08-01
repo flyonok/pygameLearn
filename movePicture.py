@@ -1,5 +1,9 @@
 import pygame
 
+'''
+使用上下键移动图片
+'''
+
 pygame.init()
 
 display_width = 800

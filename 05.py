@@ -71,9 +71,12 @@ def game_loop():
                 quit()
 
             if event.type == pygame.KEYDOWN:
+                print('keydown')
                 if event.key == pygame.K_LEFT:
+                    print('key_left')
                     x_change = -5
                 if event.key == pygame.K_RIGHT:
+                    print('key_right')
                     x_change = 5
 
             if event.type == pygame.KEYUP:
